@@ -1,0 +1,134 @@
+input[type="text"] {
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* container */
+label {
+  position: relative; /* to contain absolute elements */
+  padding-left: 30px; /* free space for custom checkbox */
+  cursor: pointer;
+}
+
+/* hide default checkbox  */
+.checkbox input[type="checkbox"] {
+  position: absolute; /* prevent taking any space */
+  /* cross-browser hidingg */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* custom checkbox */
+.checkbox span {
+  position: absolute;
+  /* position to the free space in <label> */
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  transition: 0.3s background-color; /* slight transition */
+}
+/* the check icon */
+.checkbox span:after {
+  content: "";
+  position: absolute;
+  display: none;
+
+  /* check icon */
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.checkbox:hover span {
+  background-color: #ccc;
+}
+
+/**** Here's the trick ***/
+.checkbox input:checked ~ span {
+  background-color: #2eaadc;
+}
+.checkbox input:checked ~ span:after {
+  display: block;
+}
+
+/* hide default radio button  */
+.radio input[type="radio"] {
+  position: absolute; /* prevent taking any space */
+  /* cross-browser hidingg */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* custom radio button */
+.radio span {
+  position: absolute;
+  /* position to the free space in <label> */
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  transition: 0.3s background-color; /* slight transition */
+}
+/* the check icon */
+.radio span:after {
+  content: "";
+  position: absolute;
+  display: none;
+
+  /* middle */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.radio:hover span {
+  background-color: #ccc;
+}
+
+/**** Here's the trick ***/
+.radio input:checked ~ span {
+  background-color: #2eaadc;
+}
+.radio input:checked ~ span:after {
+  display: block;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button {
+  /* remove default behavior */
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* usual styles */
+  padding: 10px;
+  border: none;
+  background-color: #3f51b5;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+.email {
+    display:block;
+  }
+  input:required + span:after {
+    content: "Required";
+  }

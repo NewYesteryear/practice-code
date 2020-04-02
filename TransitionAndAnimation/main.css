@@ -1,0 +1,42 @@
+@keyframes wiggle {
+    from{
+        transform:rotateX(0deg);
+    }
+    to{
+        transform: rotateX(50deg);
+    }
+}
+
+@keyframes flipping {
+    0%{
+        transform:rotateX(0deg);
+    }
+    50%{
+        transform: rotateX(160deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+
+.wiggle{
+    background-color: skyblue;
+    width: 10rem;
+    height: 2rem;
+    border: 1px solid yellow;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    animation: wiggle 200ms 3s 8 forwards;
+}
+
+.flip{
+    background-color: red;
+    width: 10rem;
+    height: 2rem;
+    border: 1px solid blue;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    animation: flipping 200ms 3s 8 forwards;
+}
